@@ -10,7 +10,7 @@
 }
 
 html {
-  font-size: 10px; /* 1rem = 10px */
+  font-size: 62.5%; /* 1rem = 10px */
   --color-light-pink: #ffdeda;
   --color-medium-pink: #f0afa7;
   --color-dark-pink: #987c78;
@@ -55,8 +55,9 @@ body {
 
 .container {
   position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -40%);
   width: 70%;
 }
 
@@ -65,7 +66,7 @@ body {
   display: inline-block;
   width: 120px;
   margin-top: 2%;
-  margin-bottom: 15%;
+  margin-bottom: 10%;
 }
 
 /* Content */
@@ -73,7 +74,7 @@ body {
   font-size: 3.5rem;
   letter-spacing: 0.3rem;
   color: var(--color-light-brown);
-  margin-bottom: 5%;
+  margin-bottom: 7%;
 }
 
 .content {
@@ -81,6 +82,7 @@ body {
   line-height: 1.4;
   letter-spacing: 0.1rem;
   color: var(--color-dark-brown);
+  line-height: 2;
   margin-bottom: 10%;
 }
 
@@ -97,11 +99,14 @@ body {
 
 .countdown div {
   width: 9rem;
+  height: 9rem;
   color: var(--color-gray);
   border: solid 0.07rem var(--color-medium-pink);
-  border-radius: 0.5rem;
-  padding: 0.7rem 0.5rem;
+  border-radius: 10rem;
+  padding-top: 1.6rem;
   margin: 0.5rem;
+
+  position: relative;
 }
 
 .countdown div:first-child {
@@ -115,31 +120,143 @@ body {
   margin-top: 0.5rem;
 }
 
-/* 
-.form {
-  display: flex;
-  justify-content: center;
+/* landscape view */
+@media (orientation: landscape) {
+  body {
+    display: none;
+  }
 }
 
-.email-input {
-  padding: 1.5rem;
-  border: 1px solid var(--color-medium-pink);
-  border-radius: 15px 0 0 15px;
-  font-size: 1.3rem;
-  letter-spacing: 0.2rem;
-  color: var(--color-gray);
+/*portrait view for ipad pro*/
+@media (orientation: portrait) and (min-width: 1024px) {
+  html {
+    font-size: 70%;
+  }
+
+  .landing {
+    display: block;
+  }
+
+  .landing__img {
+    height: 48vh;
+    top: 52vh;
+  }
+
+  .landing__img img {
+    width: 40%;
+  }
+
+  .landing__content {
+    height: 52vh;
+    bottom: 48vh;
+  }
+
+  .container {
+    transform: translate(-50%, -35%);
+  }
+
+  .logo {
+    margin-top: 4%;
+    width: 140px;
+  }
 }
 
+/*portrait view for ipad*/
+@media (orientation: portrait) and (max-width: 1023px) and (min-width: 768px) {
+  html {
+    font-size: 55%;
+  }
 
-.btn {
-  display: inline-block;
-  padding: 1.5rem;
-  border: 1px solid var(--color-medium-pink);
-  border-radius: 0 15px 15px 0;
-  font-size: 1.3rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  background-color: var(--color-medium-pink);
-  color: #fff;
-} */
+  .landing {
+    display: block;
+  }
+
+  .landing__img {
+    height: 48vh;
+    top: 52vh;
+  }
+
+  .landing__img img {
+    width: 40%;
+  }
+
+  .landing__content {
+    height: 52vh;
+    bottom: 48vh;
+  }
+
+  .container {
+    transform: translate(-50%, -35%);
+  }
+
+  .logo {
+    margin-top: 4%;
+  }
+}
+
+/*portrait view for phones*/
+@media (orientation: portrait) and (max-width: 767px) and (min-width: 321px) {
+  html {
+    font-size: 40%;
+  }
+
+  .landing {
+    display: block;
+  }
+
+  .landing__img {
+    height: 48vh;
+    top: 52vh;
+  }
+
+  .landing__img img {
+    width: 40%;
+  }
+
+  .landing__content {
+    height: 52vh;
+    bottom: 48vh;
+  }
+
+  .container {
+    transform: translate(-50%, -35%);
+  }
+
+  .logo {
+    width: 80px;
+    margin-top: 4%;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 320px) {
+  html {
+    font-size: 35%;
+  }
+
+  .landing {
+    display: block;
+  }
+
+  .landing__img {
+    height: 48vh;
+    top: 52vh;
+  }
+
+  .landing__img img {
+    width: 40%;
+  }
+
+  .landing__content {
+    height: 52vh;
+    bottom: 48vh;
+  }
+
+  .container {
+    transform: translate(-50%, -35%);
+  }
+
+  .logo {
+    width: 80px;
+    margin-top: 4%;
+  }
+}
